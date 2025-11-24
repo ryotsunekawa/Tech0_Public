@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>かんたん請求書作成</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 20px;
+        }
+        h1 {
+            color: #4285f4;
+        }
+        .box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>かんたん請求書作成ツール</h1>
+    
+    <div class="box">
+        <h3>使い方</h3>
+        <p>商品リストのCSVファイルをアップロードすると、きれいな請求書エクセルに変換します。</p>
+        <p>CSVの形式: 商品名,単価,数量</p>
+    </div>
+    
+    <div class="box">
+        <form action="create-invoice" method="post" enctype="multipart/form-data">
+            <p>
+                <label>お客様名：</label>
+                <input type="text" name="customer" required>
+            </p>
+            <p>
+                <label>CSVファイル：</label>
+                <input type="file" name="csv_file" accept=".csv" required>
+            </p>
+            <button type="submit" class="button">請求書作成</button>
+        </form>
+    </div>
+</body>
+</html>
